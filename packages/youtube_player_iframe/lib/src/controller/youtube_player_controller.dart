@@ -74,11 +74,12 @@ class YoutubePlayerController implements YoutubePlayerIFrameAPI {
   factory YoutubePlayerController.fromVideoId({
     required String videoId,
     YoutubePlayerParams params = const YoutubePlayerParams(),
+    String? key,
     bool autoPlay = false,
     double? startSeconds,
     double? endSeconds,
   }) {
-    final controller = YoutubePlayerController(params: params, key: videoId);
+    final controller = YoutubePlayerController(params: params, key: key);
 
     if (autoPlay) {
       controller.loadVideoById(
